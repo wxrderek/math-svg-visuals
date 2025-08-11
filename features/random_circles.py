@@ -2,11 +2,12 @@ import numpy as np
 import random
 
 from svg_shapes.circle import Circle
-from utils import random_hex_code, random_hex_grey
+from utils import random_hex_code, random_hex_grey, set_bg
 
 def random_circles(n: int, view_width: int=1000, view_height: int=1000) -> str:
     '''Draws n random circles at random locations with random radii'''
     content = []
+    content.append(set_bg('#2B2B2B', view_width, view_height))
     for i in range(n):
 
         # random location, radius, fill, opacity
@@ -30,6 +31,7 @@ def random_circles(n: int, view_width: int=1000, view_height: int=1000) -> str:
 def random_circles_on_grid(grid_size: int, view_width: int=1000, view_height: int=1000) -> str:
     '''Draws circles of random radii on grid coordinates'''
     content = []
+    content.append(set_bg('#2B2B2B', view_width, view_height))
     # iterate through grid
     for x in range(grid_size, view_width-grid_size+1, grid_size):
         for y in range(grid_size, view_height-grid_size+1, grid_size):
@@ -46,6 +48,7 @@ def random_circles_on_grid(grid_size: int, view_width: int=1000, view_height: in
 def random_walk_circles(step_size: int, n: int, view_width: int=1000, view_height: int=1000) -> str:
     '''Draws circles based on 2D random walk along axis directions for n steps, starting from center'''
     content = []
+    content.append(set_bg('#2B2B2B', view_width, view_height))
     
     # first circle
     x, y = view_width//2, view_height//2

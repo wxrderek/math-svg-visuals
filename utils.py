@@ -29,6 +29,11 @@ def build_svg_doc(content: str, width: int=1000, height: int=1000) -> str:
     return svg_template
 
 
+def set_bg(fill: str='#000000', view_width: int=1000, view_height: int=1000) -> str:
+    '''Makes rectangle as generic background if desired'''
+    return f'<rect x="0" y="0" width="{view_width}" height="{view_height}" fill="{fill}" />'
+
+
 
 # ==================== random color selectors ====================
 
