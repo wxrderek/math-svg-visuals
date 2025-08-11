@@ -2,7 +2,8 @@
 
 class Circle:
 
-    def __init__(self, cx: float, cy: float, r: float, fill: str='#000000', 
+    def __init__(self, cx: float, cy: float, r: float, 
+        fill: str='#000000', fill_opacity: float=1.0,
         stroke: str=None, stroke_width: float=1.0, 
         class_: str=None
     ):
@@ -10,6 +11,7 @@ class Circle:
         self.cy = cy
         self.r = r
         self.fill = fill
+        self.fill_opacity = fill_opacity
         self.stroke = stroke
         self.stroke_width = stroke_width
         self.class_ = class_
@@ -20,7 +22,8 @@ class Circle:
             f'cx="{self.cx}"',
             f'cy="{self.cy}"',
             f'r="{self.r}"',
-            f'fill="{self.fill}"'
+            f'fill="{self.fill}"',
+            f'fill-opacity="{self.fill_opacity}"'
         ]
 
         if self.stroke:

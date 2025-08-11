@@ -1,4 +1,5 @@
 import os
+import random
 
 def write_svg(svg_content: str, filename: str='out.svg', dirname: str='sample_svgs'):
     '''Writes text content to .svg file'''
@@ -25,3 +26,12 @@ def build_svg_doc(content: str, width: int=1000, height: int=1000) -> str:
     </svg>'''
 
     return svg_template
+
+
+
+def random_hex_code(min_rgb=(0,0,0), max_rgb=(255,255,255)) -> str:
+    '''Returns random hex code within given range of rgb values'''
+    r = random.randint(min_rgb[0], max_rgb[0])
+    g = random.randint(min_rgb[1], max_rgb[1])
+    b = random.randint(min_rgb[2], max_rgb[2])
+    return f"#{r:02X}{g:02X}{b:02X}"
