@@ -20,9 +20,10 @@ def plot_2d_points(points, title='2D Plot', color='b', marker='.', linestyle='-'
         plt.show()
 
 
-def plot_3d_points(points, title='3D Plot', color='b', marker='.', show=True, plot_scatter=True):
+def plot_3d_points(points, title='', color='b', marker='.', show=True, 
+    plot_scatter=True, show_grid=True, show_axis=True):
     '''Plots 3D points from a (N, 3) or (M, N, 3) numpy array'''
-    fig = plt.figure(figsize=(8, 6))
+    fig = plt.figure(figsize=(6, 5))
     ax = fig.add_subplot(111, projection='3d')
 
     # reshape surface
@@ -51,7 +52,9 @@ def plot_3d_points(points, title='3D Plot', color='b', marker='.', show=True, pl
     ax.set_xlabel('X')
     ax.set_ylabel('Y')
     ax.set_zlabel('Z')
-    ax.grid(True)
+
+    if not show_axis: ax.set_axis_off()
+    ax.grid(show_grid)
     plt.tight_layout()
 
     if show:

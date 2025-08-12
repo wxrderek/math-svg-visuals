@@ -31,7 +31,7 @@ def main():
 
     # testing samplers
     from data_generators.testing import test_sphere, test_torus, test_sine_wave, test_saddle
-    test_saddle(plot_scatter=False)
+    test_saddle(plot_scatter=False, show_grid=False, show_axis=False)
 
 
 if __name__ == '__main__':
