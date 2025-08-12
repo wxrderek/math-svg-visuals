@@ -1,11 +1,10 @@
 # svg_shapes/path.py
 
 class Path:
-    def __init__(
-        self, start_x: float, start_y: float,
-        fill: str = "none", fill_opacity: float = 1.0,
-        stroke: str = "#000000", stroke_width: float = 1.0,
-        class_: str = None
+    def __init__(self, start_x: float, start_y: float,
+        fill: str="none", fill_opacity: float=1.0,
+        stroke: str="#000000", stroke_width: float=1.0,
+        class_: str=None
     ):
         '''Create svg path element with specific start point only'''
         self.start = (start_x, start_y)

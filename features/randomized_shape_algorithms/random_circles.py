@@ -18,7 +18,7 @@ def random_circles(n: int, view_width: int=1000, view_height: int=1000) -> str:
         rand_opacity = random.randint(5, 10)/10.0
 
         # outline shape
-        random_circle_outline = Circle(cx, cy, r+view_width//75, fill='#000000', fill_opacity=0.5).to_svg()
+        random_circle_outline = Circle(cx, cy, r+view_width//75, fill='#2B2B2B', fill_opacity=0.5).to_svg()
         content.append(random_circle_outline)
 
         # fill shape
@@ -42,39 +42,4 @@ def random_circles_on_grid(grid_size: int, view_width: int=1000, view_height: in
             circle = Circle(x, y, r, fill=rand_fill).to_svg()
             content.append(circle)
     
-    return "\n".join(content)
-
-
-def random_walk_circles(step_size: int, n: int, view_width: int=1000, view_height: int=1000) -> str:
-    '''Draws circles based on 2D random walk along axis directions for n steps, starting from center'''
-    content = []
-    content.append(set_bg('#2B2B2B', view_width, view_height))
-    
-    # first circle
-    x, y = view_width//2, view_height//2
-    first_circle = Circle(x, y, r=step_size//4, fill='#FFFFFF').to_svg()
-    content.append(first_circle)
-
-    # random walk
-    for i in range(n):
-        step_prob = random.randint(0, 1)
-        step_dir = random.randint(0, 1)
-
-        # prevent from walking out of grid
-        if x-step_size//4 < 0: step_prob, step_dir = 1, 0
-        elif x+step_size//4 > view_width: step_prob, step_dir = 0, 0
-        if y-step_size//4 < 0: step_prob, step_dir = 1, 1
-        elif y+step_size//4 > view_height: step_prob, step_dir = 0, 1
-
-        if step_prob==1:
-            if step_dir==0: x += step_size
-            else: y += step_size
-        else:
-            if step_dir==0: x -= step_size
-            else: y -= step_size
-        
-        # generate circle
-        circle = Circle(x, y, r=step_size//4, fill='#FFFFFF').to_svg()
-        content.append(circle)
-
     return "\n".join(content)
