@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "math_svg_visuals"
+version = "0.1"
+description = "Library for making svg graphics for certain math visuals"
+readme = "README.md"
+authors = [
+    { name = "Derek Wang", email = "xiran.wang@duke.edu" }
+]
+
+requires-python = ">=3.12"
+
+dependencies = [
+    "numpy>=2.0",
+    "scipy>=1.11",
+    "pandas>=2.2",
+    "tqdm",
+    "matplotlib>=3.8",
+    "networkx>=3.6",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

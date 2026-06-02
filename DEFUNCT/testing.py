@@ -1,6 +1,6 @@
 import numpy as np
-from data_generators.function_sampler import sample_path, sample_surface
-from data_generators.plotting import plot_2d_points, plot_3d_points
+from math_svg_visuals.generators.function_sampler import sample_path, sample_surface
+from math_svg_visuals.generators.plotting import plot_2d_points, plot_3d_points
 
 
 # ==================== testing R3 surfaces ====================

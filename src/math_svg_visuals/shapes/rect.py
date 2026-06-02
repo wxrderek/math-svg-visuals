@@ -1,6 +1,6 @@
-# svg_shapes/rect.py
 
 class Rectangle:
+    
     def __init__(self, x: float, y: float, width: float, height: float,
         fill: str='#000000', fill_opacity: float=1.0, 
         stroke: str=None, stroke_width: float=1.0,

@@ -37,7 +37,7 @@ def plot_3d_points(points, title='', color='b', marker='.', show=True,
         x, y, z = points[:, 0], points[:, 1], points[:, 2]
         ax.scatter(x, y, z, c=color, marker=marker)
     
-    # Set equal axis scaling
+    # set equal axis scaling
     all_xyz = np.concatenate([x.flatten(), y.flatten(), z.flatten()])
     min_val = np.min(all_xyz)
     max_val = np.max(all_xyz)

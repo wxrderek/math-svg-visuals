@@ -4,15 +4,21 @@ Playing with SVG file generators wrapped in Python functions.
 
 End goal is to create SVG generators for mathematical visualizations/diagrams. 
 
-### Potential Features
-- Multiple random algorithms (sampling, random walks) to generate graphics based on standard geometric shapes (circles, rectangles)
+## Install
+Clone the repo and open the directory. Create and set up a virtual environment via
+```
+uv venv .venv --python 3.12
+source .venv/bin/activate
+uv pip install -e .
+```
 
-- Feature to generate a path defined by some (Lipschitz) smooth vector-valued function by fitting Bezier curve segments to sampled points from function image
+## Potential Features
+- Multiple random algorithms (sampling, random walks) to generate graphics based on standard geometric shapes (circles, rectangles)
 
 - Features to build datasets for standard 3D shapes (cones, cylinders, smooth surfaces) to plot in with matplotlib from a desired orientation
     - Option to display level curves (argument in plot_surface)
     - Note that the SVGs exported form matplotlib tend do be built from small shapes made from straight paths, not Bezier curves
-    - Several matplotlib artifacts may be to be removed after exporting; need for a post-export pipeline to ensure usability of output
+    - Several matplotlib artifacts may need to be removed after exporting; need for a post-export pipeline to ensure usability of output
 
 - Feature to generate a random graph with nodes sampled according to some 2D distribution and edges of different styles (between $\epsilon$-close nodes) to hopefully match some desired symbol
 

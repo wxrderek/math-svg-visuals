@@ -1,4 +1,3 @@
-# svg_shapes/circle.py
 
 class Circle:
 

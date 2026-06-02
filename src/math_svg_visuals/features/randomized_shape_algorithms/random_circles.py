@@ -1,8 +1,8 @@
 import numpy as np
 import random
 
-from svg_shapes.circle import Circle
-from utils import random_hex_code, random_hex_grey, set_bg
+from math_svg_visuals.shapes import Circle
+from math_svg_visuals.utils import random_hex_code, random_hex_grey, set_bg
 
 def random_circles(n: int, view_width: int=1000, view_height: int=1000) -> str:
     '''Draws n random circles at random locations with random radii'''

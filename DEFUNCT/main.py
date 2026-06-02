@@ -2,15 +2,15 @@ import numpy as np
 
 from utils import write_svg, build_svg_doc
 
-from data_generators.function_sampler import sample_path, sample_surface
-from data_generators.plotting import plot_2d_points, plot_3d_points
+from src.data_generators.function_sampler import sample_path, sample_surface
+from src.data_generators.plotting import plot_2d_points, plot_3d_points
 
 from features.randomized_shape_algorithms.random_circles import random_circles, random_circles_on_grid
 from features.randomized_shape_algorithms.random_walks import random_walk_line, random_walk_circles
 
-from svg_shapes.circle import Circle
-from svg_shapes.path import Path
-from svg_shapes.rect import Rectangle
+from src.classes.circle import Circle
+from src.classes.path import Path
+from src.classes.rect import Rectangle
 
 # set viewbox width and height
 VIEWBOX_WIDTH, VIEWBOX_HEIGHT = 1000, 1000
@@ -30,7 +30,7 @@ def main():
     '''
 
     # testing samplers
-    from data_generators.testing import test_sphere, test_torus, test_sine_wave, test_saddle
+    from src.data_generators.testing import test_sphere, test_torus, test_sine_wave, test_saddle
     test_saddle(plot_scatter=False, show_grid=False, show_axis=False)
 
 

@@ -1,9 +1,8 @@
 import numpy as np
 import random
 
-from svg_shapes.circle import Circle
-from svg_shapes.rect import Rectangle
-from utils import set_bg
+from math_svg_visuals.shapes import Circle, Rectangle
+from math_svg_visuals.utils import set_bg
 
 def random_walk_circles(step_size: int, n: int, view_width: int=1000, view_height: int=1000) -> str:
     '''Draws circles based on 2D random walk along axis directions for n steps, starting from center'''
